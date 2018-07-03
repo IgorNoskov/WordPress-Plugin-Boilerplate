@@ -39,7 +39,7 @@ class Plugin_Name_Admin {
 	private $version;
 
 	/**
-	 * Initialize the class and set its properties.
+	 * Initializes the class and set its properties.
 	 *
 	 * @since    1.0.0
 	 *
@@ -52,7 +52,7 @@ class Plugin_Name_Admin {
 	}
 
 	/**
-	 * Register the stylesheets for the admin area.
+	 * Registers the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0
 	 */
@@ -74,7 +74,7 @@ class Plugin_Name_Admin {
 	}
 
 	/**
-	 * Register the JavaScript for the admin area.
+	 * Registers the JavaScript for the admin area.
 	 *
 	 * @since    1.0.0
 	 */

@@ -14,7 +14,7 @@
  */
 
 /**
- * Define the internationalization functionality.
+ * Defines the internationalization functionality.
  *
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
@@ -24,7 +24,7 @@
 class Plugin_Name_i18n {
 
 	/**
-	 * Load the plugin text domain for translation.
+	 * Loads the plugin text domain for translation.
 	 *
 	 * @since    1.0.0
 	 */

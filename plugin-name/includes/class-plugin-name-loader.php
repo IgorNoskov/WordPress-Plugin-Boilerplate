@@ -11,7 +11,7 @@
  */
 
 /**
- * Register all actions and filters for the plugin.
+ * Registers all actions and filters for the plugin.
  *
  * Maintain a list of all hooks that are registered throughout
  * the plugin, and register them with the WordPress API. Call the
@@ -40,7 +40,7 @@ class Plugin_Name_Loader {
 	protected $filters;
 
 	/**
-	 * Initialize the collections used to maintain the actions and filters.
+	 * Initializes the collections used to maintain the actions and filters.
 	 *
 	 * @since    1.0.0
 	 */
@@ -50,7 +50,7 @@ class Plugin_Name_Loader {
 	}
 
 	/**
-	 * Add a new action to the collection to be registered with WordPress.
+	 * Adds a new action to the collection to be registered with WordPress.
 	 *
 	 * @since    1.0.0
 	 *
@@ -65,7 +65,7 @@ class Plugin_Name_Loader {
 	}
 
 	/**
-	 * Add a new filter to the collection to be registered with WordPress.
+	 * Adds a new filter to the collection to be registered with WordPress.
 	 *
 	 * @since    1.0.0
 	 *
@@ -108,7 +108,7 @@ class Plugin_Name_Loader {
 	}
 
 	/**
-	 * Register the filters and actions with WordPress.
+	 * Registers the filters and actions with WordPress.
 	 *
 	 * @since    1.0.0
 	 */

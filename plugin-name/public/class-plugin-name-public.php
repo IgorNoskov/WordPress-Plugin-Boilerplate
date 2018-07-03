@@ -39,7 +39,7 @@ class Plugin_Name_Public {
 	private $version;
 
 	/**
-	 * Initialize the class and set its properties.
+	 * Initializes the class and set its properties.
 	 *
 	 * @since    1.0.0
 	 *
@@ -52,7 +52,7 @@ class Plugin_Name_Public {
 	}
 
 	/**
-	 * Register the stylesheets for the public-facing side of the site.
+	 * Registers the stylesheets for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
@@ -74,7 +74,7 @@ class Plugin_Name_Public {
 	}
 
 	/**
-	 * Register the JavaScript for the public-facing side of the site.
+	 * Registers the JavaScript for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */

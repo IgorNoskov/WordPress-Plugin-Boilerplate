@@ -55,7 +55,7 @@ class Plugin_Name {
 	protected $version;
 
 	/**
-	 * Define the core functionality of the plugin.
+	 * Defines the core functionality of the plugin.
 	 *
 	 * Set the plugin name and the plugin version that can be used throughout the plugin.
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
@@ -79,7 +79,7 @@ class Plugin_Name {
 	}
 
 	/**
-	 * Load the required dependencies for this plugin.
+	 * Loads the required dependencies for this plugin.
 	 *
 	 * Include the following files that make up the plugin:
 	 *
@@ -122,7 +122,7 @@ class Plugin_Name {
 	}
 
 	/**
-	 * Define the locale for this plugin for internationalization.
+	 * Defines the locale for this plugin for internationalization.
 	 *
 	 * Uses the Plugin_Name_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
@@ -137,7 +137,7 @@ class Plugin_Name {
 	}
 
 	/**
-	 * Register all of the hooks related to the admin area functionality
+	 * Registers all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
 	 * @since    1.0.0
@@ -151,7 +151,7 @@ class Plugin_Name {
 	}
 
 	/**
-	 * Register all of the hooks related to the public-facing functionality
+	 * Registers all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
 	 * @since    1.0.0
@@ -165,7 +165,7 @@ class Plugin_Name {
 	}
 
 	/**
-	 * Run the loader to execute all of the hooks with WordPress.
+	 * Runs the loader to execute all of the hooks with WordPress.
 	 *
 	 * @since    1.0.0
 	 */
@@ -195,7 +195,7 @@ class Plugin_Name {
 	}
 
 	/**
-	 * Retrieve the version number of the plugin.
+	 * Retrieves the version number of the plugin.
 	 *
 	 * @since     1.0.0
 	 * @return    string    The version number of the plugin.
