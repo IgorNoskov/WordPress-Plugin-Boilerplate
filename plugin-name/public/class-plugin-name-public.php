@@ -16,7 +16,7 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @since
+ * @since 1.0.0
  */
 class Plugin_Name_Public {
 
@@ -93,6 +93,23 @@ class Plugin_Name_Public {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js',
 			array( 'jquery' ), $this->version, false );
+	}
+
+	/**
+	 * Dynamically renders shortcode.
+	 *
+	 * @since    1.0.0
+	 *
+	 * @param array $atts Associative array of attributes specified in the shortcode.
+	 * @param string $content Shortcode text.
+	 * @param string Shortcode tag.
+	 */
+	public function render_shortcode( $atts, $content = null, $tag ) {
+		$file = plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/plugin-name-shortcode-' . $tag . '.php';
+
+		if ( file_exists( $file ) ) {
+			include $file;
+		}
 	}
 
 }

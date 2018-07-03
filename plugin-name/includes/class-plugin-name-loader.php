@@ -40,13 +40,23 @@ class Plugin_Name_Loader {
 	protected $filters;
 
 	/**
-	 * Initializes the collections used to maintain the actions and filters.
+	 * The array of filters registered with WordPress.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      array $shortcodes The shortcodes registered with WordPress to fire when the plugin loads.
+	 */
+	protected $shortcodes;
+
+	/**
+	 * Initializes the collections used to maintain the actions, filters and shortcodes.
 	 *
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		$this->actions = array();
-		$this->filters = array();
+		$this->actions    = array();
+		$this->filters    = array();
+		$this->shortcodes = array();
 	}
 
 	/**
@@ -80,7 +90,20 @@ class Plugin_Name_Loader {
 	}
 
 	/**
-	 * A utility function that is used to register the actions and hooks into a single
+	 * Adds a new shortcode to the collection to be registered with WordPress.
+	 *
+	 * @since    1.0.0
+	 *
+	 * @param    string $tag The tag of the shortcode that is being registered.
+	 * @param    object $component A reference to the instance of the object on which the filter is defined.
+	 * @param    string $callback The name of the function definition on the $component.
+	 */
+	public function add_shortcode( $tag, $component, $callback ) {
+		$this->shortcodes = $this->add( $this->shortcodes, $tag, $component, $callback );
+	}
+
+	/**
+	 * A utility function that is used to register the actions, hooks and shortcodes into a single
 	 * collection.
 	 *
 	 * @since    1.0.0
@@ -95,7 +118,7 @@ class Plugin_Name_Loader {
 	 *
 	 * @return   array The collection of actions and filters registered with WordPress.
 	 */
-	private function add( $hooks, $hook, $component, $callback, $priority, $accepted_args ) {
+	private function add( $hooks, $hook, $component, $callback, $priority = null, $accepted_args = null ) {
 		$hooks[] = array(
 			'hook'          => $hook,
 			'component'     => $component,
@@ -108,7 +131,7 @@ class Plugin_Name_Loader {
 	}
 
 	/**
-	 * Registers the filters and actions with WordPress.
+	 * Registers the filters, actions and shortcodes with WordPress.
 	 *
 	 * @since    1.0.0
 	 */
@@ -121,6 +144,10 @@ class Plugin_Name_Loader {
 		foreach ( $this->actions as $hook ) {
 			add_action( $hook['hook'], array( $hook['component'], $hook['callback'] ), $hook['priority'],
 				$hook['accepted_args'] );
+		}
+
+		foreach ( $this->shortcodes as $hook ) {
+			add_shortcode( $hook['hook'], array( $hook['component'], $hook['callback'] ) );
 		}
 	}
 
