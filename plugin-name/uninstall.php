@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Fired when the plugin is uninstalled.
+ * Fired when the plugin is uninstalled
  *
  * When populating this file, consider the following flow
  * of control:
@@ -20,9 +20,9 @@
  * https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate/pull/123#issuecomment-28541913
  *
  * @link       http://example.com
- * @since      1.0.0
  *
  * @package    Plugin_Name
+ * @since      1.0.0
  */
 
 // If uninstall not called from WordPress, then exit.
