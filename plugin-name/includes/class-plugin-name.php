@@ -118,6 +118,11 @@ class Plugin_Name {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-plugin-name-public.php';
 
+		/**
+		 * The class responsible for defining all plugin helpers.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-name-helpers.php';
+
 		$this->loader = new Plugin_Name_Loader();
 	}
 
