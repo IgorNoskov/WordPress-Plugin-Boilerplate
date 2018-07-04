@@ -3,11 +3,11 @@
 /**
  * Fired during plugin activation
  *
- * @link       http://example.com
+ * @link http://example.com
  *
- * @package    Plugin_Name
+ * @package Plugin_Name
  * @subpackage Plugin_Name/includes
- * @since      1.0.0
+ * @since 1.0.0
  */
 
 /**
@@ -15,7 +15,7 @@
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @since      1.0.0
+ * @since 1.0.0
  */
 class Plugin_Name_Activator {
 
@@ -24,7 +24,7 @@ class Plugin_Name_Activator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	public static function activate() {
 

@@ -13,7 +13,7 @@
  */
 
 $atts = shortcode_atts( array(
-	'amount' => 1,
+	'amount' => 5,
 	'what'   => 'paras',
 	'cache'  => 'yes',
 ), $atts, 'lorem_text' );

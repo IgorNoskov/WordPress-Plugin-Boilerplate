@@ -3,17 +3,17 @@
 /**
  * The file that defines class with static helpers methods
  *
- * @link       http://example.com
+ * @link http://example.com
  *
- * @package    Plugin_Name
+ * @package Plugin_Name
  * @subpackage Plugin_Name/includes
- * @since      1.0.0
+ * @since 1.0.0
  */
 
 /**
  * The class with static helpers methods.
  *
- * @since      1.0.0
+ * @since 1.0.0
  */
 class Plugin_Name_Helpers {
 
@@ -24,13 +24,13 @@ class Plugin_Name_Helpers {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param int $amount Amount of paragraphs, words or bytes. Default 1.
+	 * @param int $amount Amount of paragraphs, words or bytes. Default 5.
 	 * @param string $what Determines what to use to generate the algorithm. Accepts 'paras', 'words', or 'bytes'. Default 'paras'.
 	 * @param string $cache Determines whether to cache the result or not. Accepts 'yes' or 'no'. Default 'yes'.
 	 *
 	 * @return string $lorem_text Content with lorem inspum text.
 	 */
-	public static function get_lorem( $amount = 1, $what = 'paras', $cache = 'yes' ) {
+	public static function get_lorem( $amount = 5, $what = 'paras', $cache = 'yes' ) {
 		$amount = intval( $amount );
 		$what   = sanitize_text_field( $what );
 

@@ -3,18 +3,18 @@
 /**
  * The public-facing functionality of the plugin
  *
- * @link       http://example.com
- * @since      1.0.0
+ * @link http://example.com
  *
- * @package    Plugin_Name
+ * @package Plugin_Name
  * @subpackage Plugin_Name/public
+ * @since 1.0.0
  */
 
 /**
  * The public-facing functionality of the plugin.
  *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the public-facing stylesheet and JavaScript.
+ * Defines the plugin name, version, two examples hooks for how to
+ * enqueue the public-facing stylesheet and JavaScript and dynamically renders shortcode function.
  *
  * @since 1.0.0
  */
@@ -23,28 +23,28 @@ class Plugin_Name_Public {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string $plugin_name The ID of this plugin.
+	 * @since 1.0.0
+	 * @access private
+	 * @var string $plugin_name The ID of this plugin.
 	 */
 	private $plugin_name;
 
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string $version The current version of this plugin.
+	 * @since 1.0.0
+	 * @access private
+	 * @var string $version The current version of this plugin.
 	 */
 	private $version;
 
 	/**
 	 * Initializes the class and set its properties.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 *
-	 * @param      string $plugin_name The name of the plugin.
-	 * @param      string $version The version of this plugin.
+	 * @param string $plugin_name The name of the plugin.
+	 * @param string $version The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 		$this->plugin_name = $plugin_name;
@@ -54,7 +54,7 @@ class Plugin_Name_Public {
 	/**
 	 * Registers the stylesheets for the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	public function enqueue_styles() {
 		/**
@@ -76,7 +76,7 @@ class Plugin_Name_Public {
 	/**
 	 * Registers the JavaScript for the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 */
 	public function enqueue_scripts() {
 		/**
@@ -98,7 +98,7 @@ class Plugin_Name_Public {
 	/**
 	 * Dynamically renders shortcode.
 	 *
-	 * @since    1.0.0
+	 * @since 1.0.0
 	 *
 	 * @param array $atts Associative array of attributes specified in the shortcode.
 	 * @param string $content Optional. Shortcode text. Default is null.
