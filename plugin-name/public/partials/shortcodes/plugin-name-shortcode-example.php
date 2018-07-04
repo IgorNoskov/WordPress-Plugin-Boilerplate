@@ -12,19 +12,17 @@
  * @since      1.0.0
  */
 
-$title = '';
-
-extract( shortcode_atts( array(
+$atts = shortcode_atts( array(
 	'title' => 'Example shortcode',
-), $atts ) );
+), $atts, 'example' );
 
 ?>
 
 <div class="example-shortcode">
-    <h2><?php echo esc_html( $title ); ?></h2>
+    <h2><?php echo esc_html( $atts['title'] ); ?></h2>
 	<?php if ( $content ): ?>
         <div class="example-shortcode__content">
-			<?php echo esc_html( $content ); ?>
+			<?php echo $content; ?>
         </div>
 	<?php endif; ?>
 </div>

@@ -103,13 +103,24 @@ class Plugin_Name_Public {
 	 * @param array $atts Associative array of attributes specified in the shortcode.
 	 * @param string $content Shortcode text.
 	 * @param string Shortcode tag.
+	 *
+	 * @return string @output Shortcode output.
 	 */
 	public function render_shortcode( $atts, $content = null, $tag ) {
+		$output = '';
+
 		$file = plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/shortcodes/plugin-name-shortcode-' . $tag . '.php';
 
 		if ( file_exists( $file ) ) {
+			ob_start();
+
 			include $file;
+			$output = ob_get_contents();
+
+			ob_end_clean();
 		}
+
+		return $output;
 	}
 
 }
