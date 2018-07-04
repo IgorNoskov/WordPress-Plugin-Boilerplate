@@ -22,7 +22,7 @@ class Plugin_Name_Helpers {
 	 *
 	 * Uses http://www.lipsum.com to generate dummy text.
 	 *
-	 * @since      1.0.0
+	 * @since 1.0.0
 	 *
 	 * @param int $amount Amount of paragraphs, words or bytes. Default 1.
 	 * @param string $what Determines what to use to generate the algorithm. Accepts 'paras', 'words', or 'bytes'. Default 'paras'.

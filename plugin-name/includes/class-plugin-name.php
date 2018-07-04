@@ -170,6 +170,7 @@ class Plugin_Name {
 
 		//add shortcodes
 		$this->loader->add_shortcode( 'example', $plugin_public, 'render_shortcode' );
+		$this->loader->add_shortcode( 'lorem_text', $plugin_public, 'render_shortcode' );
 	}
 
 	/**
