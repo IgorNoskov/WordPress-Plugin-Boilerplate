@@ -101,7 +101,7 @@ class Plugin_Name_Public {
 	 * @since    1.0.0
 	 *
 	 * @param array $atts Associative array of attributes specified in the shortcode.
-	 * @param string $content Shortcode text.
+	 * @param string $content Optional. Shortcode text. Default is null.
 	 * @param string Shortcode tag.
 	 *
 	 * @return string @output Shortcode output.
