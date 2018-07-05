@@ -7,6 +7,7 @@ It forked from DevinVinson/WordPress-Plugin-Boilerplate. In this version added:
 * shortcodes functionality and examples for it;
 * widgets functionality and examples for it;
 * meta boxes functionality and examples for it;
+* class Plugin_Name_Helpers with static methods for global use;
 * shared directory for both public and admin functionality.
 
 
