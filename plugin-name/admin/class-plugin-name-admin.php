@@ -217,4 +217,73 @@ class Plugin_Name_Admin {
 		return $input;
 	}
 
+	/**
+	 * Adds meta boxes example for post and page types.
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_meta_boxes() {
+		add_meta_box( 'plugin_name_example_meta', 'Meta box example',
+			array( $this, 'create_example_meta_box' ), array( 'post', 'page' ), 'advanced', 'default' );
+	}
+
+	/**
+	 * Create example meta box.
+	 *
+	 * @since    1.0.0
+	 *
+	 * @param object $post
+	 * @param object $box
+	 */
+	public function create_example_meta_box( $post, $box ) {
+		$text_field = get_post_meta( $post->ID, '_plugin_name_text', true );
+		$select     = get_post_meta( $post->ID, '_plugin_name_select', true );
+
+		//nonce for security
+		wp_nonce_field( plugin_basename( __FILE__ ), 'plugin_name_save_meta_box' );
+
+		// custom meta box form elements
+		echo '<p>Text field: <input type="text" name="plugin_name_text"
+        value="' . esc_attr( $text_field ) . '" class="widefat"></p>';
+		echo '<p>Select field:
+        <select name="plugin_name_select" class="widefat">
+            <option value="value_1" '
+		     . selected( $select, 'value_1', false ) . '>' . __( 'Value 1', 'plugin-name' ) . '
+            </option>
+            <option value="value_2" '
+		     . selected( $select, 'value_2', false ) . '>' . __( 'Value 2', 'plugin-name' ) . '
+            </option>
+            <option value="value_3" '
+		     . selected( $select, 'value_3', false ) . '>' . __( 'Value 3', 'plugin-name' ) . '
+            </option>
+        </select></p>';
+	}
+
+	/**
+	 * Save example meta box.
+	 *
+	 * @since    1.0.0
+	 *
+	 * @param integer $post_id
+	 */
+	public function save_example_meta_box( $post_id ) {
+
+		// process form data if $_POST is set
+		if ( isset( $_POST['plugin_name_save_meta_box'] ) ) {
+			// if auto saving skip saving our meta box data
+			if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+				return;
+			}
+
+			//check nonce for security
+			wp_verify_nonce( plugin_basename( __FILE__ ), 'plugin_name_save_meta_box' );
+
+			// save the meta box data as post meta using the post ID as a unique prefix
+			update_post_meta( $post_id, '_plugin_name_text',
+				sanitize_text_field( $_POST['plugin_name_text'] ) );
+			update_post_meta( $post_id, '_plugin_name_select',
+				sanitize_text_field( $_POST['plugin_name_select'] ) );
+		}
+	}
+
 }

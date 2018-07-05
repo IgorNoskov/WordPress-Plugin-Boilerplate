@@ -167,6 +167,14 @@ class Plugin_Name {
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_setting_pages' );
 		// add plugin settings
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_plugin_settings' );
+
+		// add plugin meta boxes
+		$this->loader->add_action( 'add_meta_boxes', $plugin_admin, 'add_meta_boxes' );
+		// save action for plugin example meta boxes
+		$this->loader->add_action( 'save_post', $plugin_admin, 'save_example_meta_box' );
+
+		// add dashboard widget
+		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'add_dashboard_widget' );
 	}
 
 	/**
