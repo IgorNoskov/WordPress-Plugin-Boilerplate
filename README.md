@@ -4,9 +4,9 @@ A standardized, organized, object-oriented foundation for building high-quality 
 
 It forked from DevinVinson/WordPress-Plugin-Boilerplate. In this version added:
 * plugin settings functionality;
-* shortcodes functionality and shortcode examples;
-* widgets functionality and widgets examples;
-* meta boxes functionality and examples;
+* shortcodes functionality and examples for it;
+* widgets functionality and examples for it;
+* meta boxes functionality and examples for it;
 * shared directory for both public and admin functionality.
 
 
