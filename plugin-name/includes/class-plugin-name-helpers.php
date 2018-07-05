@@ -50,4 +50,52 @@ class Plugin_Name_Helpers {
 
 		return $lorem_text;
 	}
+
+	/**
+	 * Checks a date against a format to ensure its validity.
+	 *
+	 *
+	 * @since 1.0.0
+	 *
+	 * @link http://www.php.net/manual/en/function.checkdate.php
+	 *
+	 * @param string $date The date as collected from the form field.
+	 * @param string $format Optional. The format to check the date against. Default is 'Y-m-d H:i:s'.
+	 *
+	 * @return string A validated, formatted date.
+	 */
+	public static function validate_date( $date, $format = 'Y-m-d H:i:s' ) {
+		$version = explode( '.', phpversion() );
+
+		if ( ( (int) $version[0] >= 5 && (int) $version[1] >= 2 && (int) $version[2] > 17 ) ) {
+			$d = DateTime::createFromFormat( $format, $date );
+		} else {
+			$d = new DateTime( date( $format, strtotime( $date ) ) );
+		}
+
+		return $d && $d->format( $format ) == $date;
+	}
+
+	/**
+	 * Validates a phone number.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @link http://jrtashjian.com/2009/03/code-snippet-validate-a-phone-number/
+	 *
+	 * @param string $phone A phone number string.
+	 *
+	 * @return string|bool $phone|FALSE Returns the valid phone number, FALSE if not.
+	 */
+	public static function sanitize_phone( $phone ) {
+		if ( empty( $phone ) ) {
+			return false;
+		}
+
+		if ( preg_match( '/^[+]?([0-9]?)[(|s|-|.]?([0-9]{3})[)|s|-|.]*([0-9]{3})[s|-|.]*([0-9]{4})$/', $phone ) ) {
+			return trim( $phone );
+		}
+
+		return false;
+	}
 }

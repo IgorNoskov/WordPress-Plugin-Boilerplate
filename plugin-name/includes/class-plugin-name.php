@@ -158,8 +158,15 @@ class Plugin_Name {
 	private function define_admin_hooks() {
 		$plugin_admin = new Plugin_Name_Admin( $this->get_plugin_name(), $this->get_version() );
 
+		// enqueue styles
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
+		// enqueue scripts
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+
+		// add plugin menu and pages
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_setting_pages' );
+		// add plugin settings
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_plugin_settings' );
 	}
 
 	/**
@@ -172,7 +179,9 @@ class Plugin_Name {
 	private function define_public_hooks() {
 		$plugin_public = new Plugin_Name_Public( $this->get_plugin_name(), $this->get_version() );
 
+		// enqueue styles
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+		// enqueue scripts
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 		//add shortcodes

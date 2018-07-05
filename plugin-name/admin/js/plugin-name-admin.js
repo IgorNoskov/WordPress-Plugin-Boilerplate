@@ -29,4 +29,19 @@
      * practising this, we should strive to set a better example in our own work.
      */
 
+    /**
+     * Adds Iris color field on the setting page.
+     *
+     * @since 1.0.0
+     */
+    $('.iris_color').wpColorPicker({
+        defaultColor: false,
+        change: function (event, ui) {
+        },
+        clear: function () {
+        },
+        hide: true,
+        palettes: true
+    });
+
 })(jQuery);
