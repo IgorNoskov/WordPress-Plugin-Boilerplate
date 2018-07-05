@@ -1,6 +1,14 @@
-# WordPress Plugin Boilerplate
+# WordPress Plugin Boilerplate Advanced
 
-A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.
+A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins. 
+
+It forked from DevinVinson/WordPress-Plugin-Boilerplate. In this version added:
+* plugin settings functionality;
+* shortcodes functionality and shortcode examples;
+* widgets functionality and widgets examples;
+* meta boxes functionality and examples;
+* shared directory for both public and admin functionality.
+
 
 ## Contents
 
